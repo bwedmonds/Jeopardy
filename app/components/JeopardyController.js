@@ -5,12 +5,11 @@ import JeopardyService from "./JeopardyService.js";
 let _jeopardyService = new JeopardyService();
 
 function _drawQuestions() {
+  debugger
   let questions = _jeopardyService.Questions
   let template = ''
-  for () {
-
-  }
-  document.getElementById('question-card').innerHTML = template
+  template = questions.Template
+  document.getElementById('question-display').innerHTML = template
 }
 
 //public
