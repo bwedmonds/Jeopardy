@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/game.css">
+  <title>Jeopardy</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="card">
+        <h5 class="card-header" role="tab" id="headingOne">Question</h5>
+        <div class="card" role="tabpanel" aria-labelledby="headingOne">
+          <div class="card-body" id="question-card">
+            <h1>Your brain-stumper:</h1>
+            <p>${this.question}</p>
+            <h5>You're wagering ${this.value}!</h5>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h5 class="card-header" role="tab" id="headingTwo">
+          <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+            aria-expanded="false" aria-controls="collapseTwo">
+            <i class="fa fa-chevron-down pull-right"></i> Answer
+          </a>
+        </h5>
+        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="card-body" id="answer-card">
+            <h1>How'd you do?</h1>
+            <p>${this.answer}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+  <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
