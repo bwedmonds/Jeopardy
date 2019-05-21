@@ -5,12 +5,12 @@ import JeopardyService from "./JeopardyService.js";
 let _jeopardyService = new JeopardyService();
 
 function _drawQuestions() {
-  debugger
-  let questions = _jeopardyService.Questions
-  let template = ''
-  template = questions.Template
+  let question = _jeopardyService.Questions
+  let template = question.Template
   document.getElementById('question-display').innerHTML = template
 }
+
+
 
 //public
 
@@ -20,5 +20,9 @@ export default class JeopardyController {
     _jeopardyService.addSubscriber('questions', _drawQuestions)
     //fetch data
     _jeopardyService.getApiQuestions();
+  }
+
+  nextQuestion() {
+    _jeopardyService.getApiQuestions()
   }
 }

@@ -24,10 +24,10 @@ export default class JeopardyService {
     _subscribers[propName].push(fn)
   }
   get Questions() {
-    return _state.questions.map(q => new Question(q))
+    return _state.questions.map(q => new Question(q))[0]
   }
   getApiQuestions() {
-    _api.get('questions')
+    _api.get()
       .then(response => {
         let data = response.data.map(rawData => new Question(rawData))
         setState('questions', data)
